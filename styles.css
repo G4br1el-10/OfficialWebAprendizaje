@@ -1,0 +1,245 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color: #D5EB8D;
+    background-color: #515760;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+}
+
+.floating-letters-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(120deg, #69C16F 0%, #2E9F84 100%);
+    overflow: hidden;
+}
+
+header {
+    background-color: #2E9F84;
+    color: #D5EB8D;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #D5EB8D;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: color 0.3s;
+}
+
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+nav ul li a::after {
+    content: '•'; 
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 10px;
+    color: #69C16F; 
+    animation: bounce 1s infinite;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover {
+    color: #2E9F84; 
+}
+
+
+section {
+    padding: 50px;
+    margin: 20px 10%;
+    background: rgba(81, 87, 96, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.animated-title {
+    color: #D5EB8D;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.content h3 {
+    color: #69C16F;
+}
+
+.content p {
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 250px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+iframe{
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.floating-letter {
+    position: absolute;
+    color: rgba(213, 235, 141, 0.5);
+    font-size: 3vw;
+    animation: float 8s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.back-to-top-button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 20px;
+    background-color: #FFCC00; 
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-to-top-button:hover {
+    background-color: #FFC107; 
+    transform: scale(1.1); 
+}
+
+
+footer {
+    background-color: #333; 
+    color: #FFF;
+    text-align: center; 
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5); 
+    transition: background-color 0.3s, transform 0.3s; 
+}
+
+footer:hover {
+    background-color: #444; 
+    transform: translateY(-5px); 
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px; 
+}
+
+@media (max-width: 600px) {
+    footer p {
+        font-size: 14px; 
+    }
+}
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2E9F84; 
+    color: #D5EB8D;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.home-button:hover {
+    background-color: #69C16F; 
+    transform: scale(1.05); 
+}
+@media (max-width: 600px) {
+    img, video, iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    img {
+        margin-bottom: 20px; 
+    }
+
+    video, iframe {
+        display: block;
+        margin-top: 10px;
+    }
+
+    section {
+        margin: 20px 5%;
+        padding: 30px; 
+    }
+
+    header {
+        padding: 15px; 
+    }
+
+    nav ul {
+        flex-direction: column; 
+        gap: 10px; 
+    }
+
+    .back-to-top-button {
+        padding: 8px 12px; 
+    }
+
+    footer {
+        padding: 15px; 
+    }
+}
